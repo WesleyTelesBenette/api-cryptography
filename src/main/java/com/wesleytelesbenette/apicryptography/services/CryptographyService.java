@@ -24,13 +24,16 @@ public class CryptographyService
     {
         int securityNumber = 50; //>2
         int index = 0;
+
         for (int c = 0; c < text.length(); c++)
         {
             char textChar = text.charAt(c);
             int charIndex = alphabet.indexOf(textChar);
+
             if (charIndex != -1)
                 index += (charIndex + (c * charIndex)) * securityNumber;
         }
+
         return index % (alphabet.length() - 1);
     }
 
@@ -42,7 +45,10 @@ public class CryptographyService
 
         for (char c: message.toCharArray())
         {
-            index = (index + encryptedAlphabets.get(currentAlphabet).indexOf(c)) % (alphabet.length() - 1);
+            int encryptVar = index % key.length();
+            encryptVar = encryptedAlphabets.get(currentAlphabet).charAt(encryptVar);
+
+            index = (index + encryptedAlphabets.get(currentAlphabet).indexOf(c) + encryptVar) % (alphabet.length() - 1);
             response = response.concat(String.valueOf(encryptedAlphabets.get(currentAlphabet).charAt(index)));
 
             currentAlphabet = (currentAlphabet + 1) % (encryptedAlphabets.size() - 1);
@@ -59,11 +65,14 @@ public class CryptographyService
 
         for (char c: message.toCharArray())
         {
-            int indexTrue = (encryptedAlphabets.get(currentAlphabet).indexOf(c) - index);
-            if (indexTrue < 0) indexTrue += (alphabet.length() - 1);
+            int encryptVar = index % key.length();
+            encryptVar = encryptedAlphabets.get(currentAlphabet).charAt(encryptVar);
+
+            int indexTrue = (encryptedAlphabets.get(currentAlphabet).indexOf(c) - index - encryptVar);
+            while (indexTrue < 0) indexTrue += (alphabet.length() - 1);
             char charTrue = encryptedAlphabets.get(currentAlphabet).charAt(indexTrue);
 
-            index = (index + encryptedAlphabets.get(currentAlphabet).indexOf(charTrue)) % (alphabet.length() - 1);
+            index = (index + encryptedAlphabets.get(currentAlphabet).indexOf(charTrue) + encryptVar) % (alphabet.length() - 1);
             response = response.concat(String.valueOf(charTrue));
 
             currentAlphabet = (currentAlphabet + 1) % (encryptedAlphabets.size() - 1);
