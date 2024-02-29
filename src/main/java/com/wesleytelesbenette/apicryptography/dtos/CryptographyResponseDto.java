@@ -11,4 +11,9 @@ public class CryptographyResponseDto
      * A mensagem retornada ao usuário.
      */
     String messageResponse;
+
+    public CryptographyResponseDto (String message)
+    {
+        messageResponse = message;
+    }
 }
