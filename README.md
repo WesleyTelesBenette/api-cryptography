@@ -18,8 +18,7 @@ Para a criação da API foi escolhido a [**arquitetura monolítica**](https://mi
 
 ## ✉️ Comunicação com a API
 ### URL para Acessar a API
-- Pendente...
-<!--- "https://api-inventory-management.onrender.com".-->
+- "https://api-cryptography.onrender.com".
 
 ### Cryptography
 - **POST**: "/cryptography/encrypt" - Criptografa uma mensagem, com o body de [CryptographyRequestDto](https://github.com/WesleyTelesBenette/api-cryptography/blob/master/src/main/java/com/wesleytelesbenette/apicryptography/dtos/CryptographyRequestDto.java).
