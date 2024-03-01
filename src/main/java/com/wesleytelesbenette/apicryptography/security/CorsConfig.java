@@ -1,4 +1,4 @@
-package com.wesleytelesbenette.apicryptography.configs;
+package com.wesleytelesbenette.apicryptography.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -11,7 +11,7 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins("*")
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowedMethods("POST")
                 .allowedHeaders("*");
     }
 }
