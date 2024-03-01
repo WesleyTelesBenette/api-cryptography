@@ -22,5 +22,5 @@ Para a criação da API foi escolhido a [**arquitetura monolítica**](https://mi
 <!--- "https://api-inventory-management.onrender.com".-->
 
 ### Cryptography
-- POST: "/cryptography/encrypt" - Criptografa uma mensagem, com o body de [CryptographyRequestDto](https://github.com/WesleyTelesBenette/api-cryptography/blob/master/src/main/java/com/wesleytelesbenette/apicryptography/dtos/CryptographyRequestDto.java).
-- POST: "/cryptography/decrypt" - Descriptografa uma mensagem, com o body de [CryptographyRequestDto](https://github.com/WesleyTelesBenette/api-cryptography/blob/master/src/main/java/com/wesleytelesbenette/apicryptography/dtos/CryptographyRequestDto.java).
+- **POST**: "/cryptography/encrypt" - Criptografa uma mensagem, com o body de [CryptographyRequestDto](https://github.com/WesleyTelesBenette/api-cryptography/blob/master/src/main/java/com/wesleytelesbenette/apicryptography/dtos/CryptographyRequestDto.java).
+- **POST**: "/cryptography/decrypt" - Descriptografa uma mensagem, com o body de [CryptographyRequestDto](https://github.com/WesleyTelesBenette/api-cryptography/blob/master/src/main/java/com/wesleytelesbenette/apicryptography/dtos/CryptographyRequestDto.java).
